@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+
+</head>
+
+<body>
+<div>
+
+<h1><span th:text="${locale}">locale</span></h1>
+<h1><span th:text="${tableTitle}">Table Title</span></h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>марка</th>
+        <th>модель</th>
+        <th>год выпуска</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:if="${cars.empty}">
+        <td colspan="2"> No Cars Available</td>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td><span th:text="${car.brand}">brand  </span></td>
+        <td><span th:text="${car.model}">model   </span></td>
+        <td><span th:text="${car.year}">year  </span></td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+</body>
+
+</html>
